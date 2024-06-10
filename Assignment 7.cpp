@@ -36,7 +36,7 @@ public:
     // Check if a value is already in the hashtable
     bool contains(int key) {
         int index = hashFunction(key); 
-        return (table[index].key == key);  // Check if the key is in the hashtable
+        return (table[index].key == key && table[index].value != 0);  // Check if the key is in the hashtable and the value is not 0
     }
 };
 
@@ -50,7 +50,7 @@ int main() {
     hashtable.insert(11, 1100);
 
     // Check if a value is in the hashtable
-    std::cout << "Contains key 1: " << (hashtable.contains(1) ? "true" : "false") << std::endl;  // Should return true
+    std::cout << "Contains key 11: " << (hashtable.contains(11) ? "true" : "false") << std::endl;  // Should return true
     std::cout << "Contains key 3: " << (hashtable.contains(3) ? "true" : "false") << std::endl;  // Should return false
 
     return 0;
